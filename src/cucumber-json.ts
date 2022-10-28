@@ -223,10 +223,12 @@ export class CucumberJsonReport implements CucumberJsonReportInterface {
 
   private getUserAgentFromBrowser(browser: string): string {
     const userAgent = this._userAgents.find((ua) => {
+      // We don't when this happens...
       if (ua.includes('https://')) {
         return ua.startsWith(`${browser} `);
       }
-      return ua === browser;
+
+      return ua.startsWith(browser.split('/')[0]);
     });
 
     if (userAgent === undefined) {
@@ -331,7 +333,9 @@ export class CucumberJsonReport implements CucumberJsonReportInterface {
       return [];
     }
 
-    const errors = testRunInfo.errs.filter((err) => err.userAgent === browserName);
+    const errors = testRunInfo.errs.filter((err) =>
+      err.userAgent.startsWith(browserName.split('/')[0]),
+    );
     return errors;
   };
 

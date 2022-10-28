@@ -16,6 +16,7 @@ const unknownBrowser: Browser = {
  * @param userAgent - user agent given back by TestCafe.
  * This string is in the form : '<browser> x.y.z / <platform> a.b.c'.
  * For example: Firefox 59.0.0 / Mac OS X 10.12.0'
+ * Chrome 107.0.5304.87 / Monterey 12
  */
 export function getPlatformFrom(userAgent: string | undefined): Platform {
   if (userAgent === undefined) {
@@ -45,6 +46,7 @@ export function getPlatformFrom(userAgent: string | undefined): Platform {
     };
   }
   const platformInfo = extractNameAndVersion(rawPlatorm);
+
   if (isIOS(platformInfo.name)) {
     return {
       name: 'ios',
@@ -85,6 +87,8 @@ export function getPlatformFrom(userAgent: string | undefined): Platform {
   };
 }
 
+const macOSVersionNames = ['ventura', 'monterey', 'big sur', 'catalina'];
+
 /**
  *
  * @param userAgent - user agent given back by TestCafe.
@@ -121,8 +125,9 @@ export function isMacOsX(platformName: string | undefined): boolean {
     return false;
   }
   const result =
-    platformName.toLowerCase().includes('mac') &&
-    platformName.toLowerCase().includes('os');
+    macOSVersionNames.includes(platformName.toLowerCase()) ||
+    (platformName.toLowerCase().includes('mac') &&
+      platformName.toLowerCase().includes('os'));
   return result;
 }
 
@@ -130,7 +135,8 @@ export function isLinux(platformName: string | undefined): boolean {
   if (platformName === undefined) {
     return false;
   }
-  const result = platformName.toLowerCase().includes('linux');
+
+  const result = ['linux', 'ubuntu'].includes(platformName.toLowerCase());
   return result;
 }
 
