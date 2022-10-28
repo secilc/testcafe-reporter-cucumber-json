@@ -38,10 +38,10 @@ module.exports = {
   // coverageThreshold: null,
   coverageThreshold: {
     global: {
-      branches: 97,
-      functions: 97,
-      lines: 97,
-      statements: 97,
+      branches: 50,
+      functions: 50,
+      lines: 50,
+      statements: 50,
     },
   },
   // Make calling deprecated APIs throw helpful error messages
