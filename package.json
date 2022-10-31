@@ -1,5 +1,5 @@
 {
-  "name": "@secilc/testcafe-reporter-cucumber-json",
+  "name": "testcafe-reporter-cucumber-json-gherkin",
   "version": "1.0.0",
   "description": "Cucumber JSON TestCafe reporter plugin.",
   "main": "lib/index.js",
