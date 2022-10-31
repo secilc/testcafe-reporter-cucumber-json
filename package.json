@@ -4,6 +4,9 @@
   "description": "Cucumber JSON TestCafe reporter plugin.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "publishConfig": {
+  "access": "public"
+  },
   "bin": {
     "testcafe-reporter-cucumber-json": "./bin/testcafe-reporter-cucumber-json.js"
   },
