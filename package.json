@@ -1,6 +1,6 @@
 {
   "name": "testcafe-reporter-cucumber-json",
-  "version": "6.3.0",
+  "version": "1.0.0",
   "description": "Cucumber JSON TestCafe reporter plugin.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -23,9 +23,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hdorgeval/testcafe-reporter-cucumber-json.git"
+    "url": "git+https://github.com/secilc/testcafe-reporter-cucumber-json.git"
   },
-  "author": "Henri d'Orgeval",
+  "author": "Henri d'Orgeval, Secil Kaplan",
   "keywords": [
     "testcafe",
     "reporter",
@@ -35,9 +35,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hdorgeval/testcafe-reporter-cucumber-json/issues"
+    "url": "https://github.com/secilc/testcafe-reporter-cucumber-json/issues"
   },
-  "homepage": "https://github.com/hdorgeval/testcafe-reporter-cucumber-json#readme",
+  "homepage": "https://github.com/secilc/testcafe-reporter-cucumber-json#readme",
   "dependencies": {
     "@types/minimist": "1.2.2",
     "@types/node": "14.0.24",
