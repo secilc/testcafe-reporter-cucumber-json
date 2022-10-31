@@ -1,11 +1,11 @@
 {
-  "name": "testcafe-reporter-cucumber-json-gherkin",
+  "name": "@secilc/testcafe-reporter-cucumber-json",
   "version": "1.0.0",
   "description": "Cucumber JSON TestCafe reporter plugin.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "bin": {
-    "testcafe-reporter-cucumber-json-gherkin": "./bin/testcafe-reporter-cucumber-json.js"
+    "testcafe-reporter-cucumber-json": "./bin/testcafe-reporter-cucumber-json.js"
   },
   "scripts": {
     "jest--init": "jest --init",
