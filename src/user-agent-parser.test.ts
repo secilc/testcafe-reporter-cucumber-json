@@ -74,6 +74,18 @@ test('It should get OSX platform for Monterey', () => {
   expect(result.version).toBe('12');
 });
 
+test('It should get OSX platform for Sonoma', () => {
+  // Given
+  const userAgent = 'Chrome 125.0.0.0 / Sonoma 14';
+
+  // When
+  const result = getPlatformFrom(userAgent);
+
+  // Then
+  expect(result.name).toBe('osx');
+  expect(result.version).toBe('14');
+});
+
 test('It should get Linux platform', () => {
   // Given
   const userAgent = 'Chrome 80.0.3987.132 / Linux 0.0';
@@ -96,6 +108,18 @@ test('It should get Linux platform for Ubuntu', () => {
   // Then
   expect(result.name).toBe('linux');
   expect(result.version).toBe('20.04');
+});
+
+test('It should get Linux platform for Debian', () => {
+  // Given
+  const userAgent = 'Chrome 125.0.0.0 / Debian 12.5';
+
+  // When
+  const result = getPlatformFrom(userAgent);
+
+  // Then
+  expect(result.name).toBe('linux');
+  expect(result.version).toBe('12.5');
 });
 
 test('It should get Windows platform on Windows 10', () => {
